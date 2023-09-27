@@ -11,12 +11,12 @@
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- * for Holberton project
+ * 
  */
 typedef struct listint_s
 {
-	int n;
-	struct listint_s *next;
+    int n;
+    struct listint_s *next;
 } listint_t;
 
 int __putchar(char c);
