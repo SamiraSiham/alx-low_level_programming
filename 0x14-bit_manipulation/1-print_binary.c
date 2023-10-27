@@ -10,14 +10,14 @@
 void print_binary(unsigned long int num)
 {
 	unsigned long int temp;
-	int shift;
+	int shifts;
 
-	if (n == 0)
+	if (num == 0)
 	{
 		printf("0");
 		return;
 	}
-	temp = n;
+	temp = num;
 	shifts = 0;
 
 	while ((temp >>= 1) > 0)
@@ -25,7 +25,7 @@ void print_binary(unsigned long int num)
 
 	while (shifts >= 0)
 	{
-		if ((n >> shifts) & 1)
+		if ((num >> shifts) & 1)
 			printf("1");
 		else
 			printf("0");
