@@ -10,17 +10,19 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int open_file, write_file, len = 0;
+	int fd;
+	ssize_t bytes = 0;
+	int len = 0;
 
-	if (!filename || !text_content)
+	if (!filename)
 		return (-1);
 	for (len = 0; text_content[len];)
 		len++;
-	open_file = open(filename, O_WRONLY | O_APPEND);
-	write_file = write(open_file, text_content, len);
-
-	if (open_file == -1 || write_file == -1)
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
 		return (-1);
-	close(open_file);
-	return (1);
+	if (len)
+		bytes = write(fd, text_content, len);
+	close(fd);
+	return (bytes == len ? 1 : -1);
 }
