@@ -1,1 +1,1 @@
-readme file
+bit manipulation readme file
