@@ -6,7 +6,8 @@
  *
  * Return: unsigned int form of b
  */
-unsigned int binary_to_uint(const char *b)
+
+unsigned int binary_to_uint(const char* b)
 {
 	unsigned int num = 0;
 
