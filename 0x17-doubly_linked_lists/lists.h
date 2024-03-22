@@ -20,6 +20,6 @@ typedef struct dlistint_s
 	struct dlistint_s *next;
 } dlistint_t;
 
-size_t print_dlistint(const d_listint *h);
+size_t print_dlistint(const d_listint_t *h);
 
 #endif
