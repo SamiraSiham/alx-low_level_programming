@@ -1,5 +1,34 @@
 #include "hash_tables.h"
 /**
+ * make_hash_node - create new hash node
+ * @key: node key
+ * @value: node value
+ * Return: new node, or NULL
+ */
+hash_node_t *make_hash_node(const char *key, const char *value)
+{
+	hash_node_t *node;
+
+	node = malloc(sizeof(hash_node_t));
+	if (!node)
+		return (NULL);
+	node->key = strdup(key);
+	if (!node->key)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->value = strdup(value);
+	if (!node->value)
+	{
+		free(node->key);
+		free(node);
+		return (NULL);
+	}
+	node->next = NULL;
+	return (node);
+}
+/**
  * hash_table_set - set a key for a hash table value
  * @ht: hash table
  * @key: key
