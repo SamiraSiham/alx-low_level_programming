@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 
-/*
+/**
  * hash_table_print - print hash table
  * @ht: hash table to printi
  * Return: void
